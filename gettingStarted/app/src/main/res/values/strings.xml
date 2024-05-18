@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">My First App</string>
     <string name="main_text">Hi, my name is Allan and I am a cadet at 42 Rio!</string>
+    <string name="test">Hello </string>
+    <string name="hint">Type your name:</string>
+    <string name="change">Send</string>
 </resources>
