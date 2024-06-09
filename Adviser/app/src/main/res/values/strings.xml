@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Adviser</string>
+    <string name="button">Find!</string>
+    <string name="text">No option selected.</string>
+    <string-array name="options">
+        <item>Light</item>
+        <item>Amber</item>
+        <item>Dark</item>
+        <item>Brown</item>
+    </string-array>
+</resources>
