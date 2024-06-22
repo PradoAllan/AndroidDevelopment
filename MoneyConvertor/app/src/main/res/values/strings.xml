@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Money Convertor</string>
+    <string name="btn_text">Convert</string>
+    <string name="txt_result">Result:</string>
+    <string name="txt_value">Value:</string>
+    <string-array name="money">
+        <item>USD</item>
+        <item>CAD</item>
+        <item>EUR</item>
+    </string-array>
+</resources>
