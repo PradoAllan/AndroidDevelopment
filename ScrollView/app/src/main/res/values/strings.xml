@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ScrollView</string>
+    <string name="input">Message: </string>
 </resources>
