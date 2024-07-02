@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MoneyConvertorTwo</string>
+    <string name="inputValue">Amount:</string>
+    <string name="conversion">Conversion:</string>
+    <string name="convert">Convert</string>
+    <string name="resultValue">Result:</string>
+</resources>
