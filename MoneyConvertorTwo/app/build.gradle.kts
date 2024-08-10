@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.hfad.moneyconvertortwo"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.hfad.moneyconvertortwo"
