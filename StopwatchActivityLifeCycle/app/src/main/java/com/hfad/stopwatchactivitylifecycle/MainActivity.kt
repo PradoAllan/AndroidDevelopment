@@ -6,6 +6,7 @@ import android.os.SystemClock
 import android.widget.Button
 import android.widget.Chronometer
 import android.widget.EditText
+import android.widget.TextView
 import androidx.core.view.isVisible
 import org.jetbrains.annotations.Nullable
 
@@ -53,10 +54,11 @@ class MainActivity : AppCompatActivity() {
         val ref_mode = findViewById<Button>(R.id.change_status)
         val ref_input_amout = findViewById<EditText>(R.id.amount)
         val ref_pomodoro = findViewById<Button>(R.id.pomodoro)
+        val ref_status = findViewById<TextView>(R.id.status)
 
         ref_pomodoro.setOnClickListener {
             var input : Long = ref_input_amout.text.toString().toLong()
-            var value : Long = input * 60000
+            var value : Long = SystemClock.elapsedRealtime() + (input * 60000)
             setPomodoroTime(value)
         }
 
@@ -66,6 +68,7 @@ class MainActivity : AppCompatActivity() {
             ref_input_amout.isVisible = true
             ref_pomodoro.isVisible = true
             ref_chronometer.isCountDown = true
+            ref_status.text = "Pomodoro Mode"
         }
     }
 
