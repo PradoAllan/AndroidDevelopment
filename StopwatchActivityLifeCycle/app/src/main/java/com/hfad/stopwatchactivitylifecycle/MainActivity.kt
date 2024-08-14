@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.widget.Button
 import android.widget.Chronometer
+import android.widget.EditText
+import androidx.core.view.isVisible
+import org.jetbrains.annotations.Nullable
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,6 +48,32 @@ class MainActivity : AppCompatActivity() {
             offset = 0
             setBaseTime()
         }
+
+        //referencia ao pomodoro button
+        val ref_mode = findViewById<Button>(R.id.change_status)
+        val ref_input_amout = findViewById<EditText>(R.id.amount)
+        val ref_pomodoro = findViewById<Button>(R.id.pomodoro)
+
+        ref_pomodoro.setOnClickListener {
+            var input : Long = ref_input_amout.text.toString().toLong()
+            var value : Long = input * 60000
+            setPomodoroTime(value)
+        }
+
+        ref_mode.setOnClickListener {
+            ref_pause.callOnClick()
+            ref_reset.callOnClick()
+            ref_input_amout.isVisible = true
+            ref_pomodoro.isVisible = true
+            ref_chronometer.isCountDown = true
+        }
+    }
+
+    fun setPomodoroTime(time : Long) {
+        ref_chronometer.base = time
+        ref_chronometer.start()
+        running = true
+        offset = 0
     }
 
     //atualiza o ref_chronometer.base time
