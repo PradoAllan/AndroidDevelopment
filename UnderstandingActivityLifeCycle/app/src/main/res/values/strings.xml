@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UnderstandingActivityLifeCycle</string>
+    <string name="start">START</string>
+    <string name="pause">PAUSE</string>
+    <string name="reset">RESET</string>
+    <string name="name">My timer!</string>
+</resources>
