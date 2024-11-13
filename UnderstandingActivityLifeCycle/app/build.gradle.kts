@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.hfad.understandingactivitylifecycle"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.hfad.understandingactivitylifecycle"
