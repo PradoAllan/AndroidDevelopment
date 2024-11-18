@@ -42,8 +42,6 @@ class MainActivity : AppCompatActivity() {
                 setBaseTime()
         }
 
-        //chronometer = findViewById<Chronometer>(R.id.stopwatch)
-
         val startButtonRef = findViewById<Button>(R.id.startButton)
         startButtonRef.setOnClickListener {
             if (!isRunning)
@@ -77,6 +75,68 @@ class MainActivity : AppCompatActivity() {
         outState.putBoolean("running", isRunning)
         super.onSaveInstanceState(outState)
     }
+
+    /*Os métodos onPause() e onResume() são chamados sempre que uma activity fica invisivel e
+    * fica visivel, respectivamente.
+    *
+    * Então, dessa forma, podemos implementar o comportamento de parar e continuar a contagem
+    * do cronometro nesses dois métodos. */
+    override fun onPause() {
+        super.onPause()
+        if (isRunning)
+        {
+            //isRunning = false
+            saveOffSet()
+            chronometer.stop()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (isRunning)
+        {
+            setBaseTime()
+            chronometer.start()
+        }
+    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        if (isRunning)
+//        {
+//            //isRunning = false
+//            saveOffSet()
+//            chronometer.stop()
+//        }
+//    }
+//
+//    override fun onRestart() {
+//        super.onRestart()
+//        if (isRunning)
+//        {
+//            setBaseTime()
+//            chronometer.start()
+//        }
+//    }
+
+    /*Se eu implementar o código para que, quando a activity volte a estar visivel depois de estar
+    * invisivel, no onStart(), pode dar problema, pois o método onStart() é chamado não apenas
+    * nessa mudança de estado. Ao inicializarmos o app, ele tambem é chamado.
+    *
+    * No caso desse app, não da problema pois eu inicializo a variável isRunning como false. Então,
+    * o cronometro não começa rodando.
+    * Mas, se eu inicializar ela como true, o cronometro vai inicializar assim que abrirmos o app.
+    *
+    * POR ISSO QUE, nesses casos onde queremos implementar um comportamento quando o app volta a
+    * estar visivel depois de ter ficado invisivel, PRECISAMOS implementar no método onRestart()!*/
+//    override fun onStart() {
+//        super.onStart()
+//        if (isRunning)
+//        {
+//            setBaseTime()
+//            chronometer.start()
+//        }
+//    }
 
 //    private var baseTime: Long = 0
 //    //SystemClock.elapsedRealtime()
