@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">studyingFragmentsNavComp</string>
+    <string name="welcomeText">Welcome to the Secret Message app!
+    Use this app to encrypt a secret message. Click on the Start Button
+    to begin.</string>
+    <string name="start">Start</string>
+    <string name="messageHint">Please enter your secret message.</string>
+    <string name="next">Next</string>
+    <string name="encryptedText">Here is your encrypted message:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
