@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.hfad.studyingfragmentsnavcomp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.hfad.studyingfragmentsnavcomp"
