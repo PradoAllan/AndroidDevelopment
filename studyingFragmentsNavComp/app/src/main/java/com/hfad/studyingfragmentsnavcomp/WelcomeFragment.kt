@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 //Nova classe que extende de Fragment()
 class WelcomeFragment: Fragment() {
@@ -12,7 +13,15 @@ class WelcomeFragment: Fragment() {
     //Esse metodo é chamado quando o fragment precisa ser mostrado na tela
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         //Infla o layout para esse fragment
-        return (inflater.inflate(R.layout.fragment_welcome, container, false))
+        val view = inflater.inflate(R.layout.fragment_welcome, container, false)
+        val startButton = view.findViewById<Button>(R.id.button)
+
+        startButton.setOnClickListener {
+            
+        }
+
+        return (view)
+        //return (inflater.inflate(R.layout.fragment_welcome, container, false))
     }
 }
 //

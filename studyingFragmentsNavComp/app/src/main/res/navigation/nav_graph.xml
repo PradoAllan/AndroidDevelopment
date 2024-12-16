@@ -9,7 +9,11 @@
         android:id="@+id/welcomeFragment"
         android:name="com.hfad.studyingfragmentsnavcomp.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/messageFragment"
         android:name="com.hfad.studyingfragmentsnavcomp.MessageFragment"
