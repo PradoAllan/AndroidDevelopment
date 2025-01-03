@@ -6,18 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 
 //Nova classe que extende de Fragment()
 class WelcomeFragment: Fragment() {
     //A nova classe implementa o metodo "onCreateView()"
     //Esse metodo é chamado quando o fragment precisa ser mostrado na tela
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        //Infla o layout para esse fragment
+        //Infla o layout para esse fragmentdd
         val view = inflater.inflate(R.layout.fragment_welcome, container, false)
+        lateinit var navControllerRef : NavController
         val startButton = view.findViewById<Button>(R.id.button)
 
         startButton.setOnClickListener {
-            
+            navControllerRef = view.findNavController()
+            navControllerRef.navigate(R.id.action_welcomeFragment_to_messageFragment)
+            //view.findNavController().navigate(R.id.action_welcomeFragment_to_messageFragment)
         }
 
         return (view)
