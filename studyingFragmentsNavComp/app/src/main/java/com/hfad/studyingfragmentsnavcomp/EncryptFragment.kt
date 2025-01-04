@@ -5,15 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
 class EncryptFragment: Fragment()
 {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, SavedInstanceState: Bundle?): View?
     {
         val view = inflater.inflate(R.layout.fragment_encrypt, container, false)
-
+        val message = EncryptFragmentArgs.fromBundle(requireArguments()).message
+        val encryptedMessageRef = view.findViewById<TextView>(R.id.encryptedText)
+        encryptedMessageRef.text = encryptMessage(message)
         return (view)
     }
+}
+
+fun encryptMessage(message: String): String
+{
+    return (message.uppercase().reversed())
 }
 
 //// TODO: Rename parameter arguments, choose names that match

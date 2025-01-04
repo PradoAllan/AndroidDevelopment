@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 
@@ -16,6 +17,7 @@ class MessageFragment: Fragment() {
         lateinit var navControllerRef : NavController
         val backButton = view.findViewById<Button>(R.id.back)
         val nextButton = view.findViewById<Button>(R.id.next)
+        val messageEditTextRef = view.findViewById<EditText>(R.id.message)
 
         backButton.setOnClickListener {
             navControllerRef = view.findNavController()
@@ -24,7 +26,10 @@ class MessageFragment: Fragment() {
 
         nextButton.setOnClickListener {
             navControllerRef = view.findNavController()
-            navControllerRef.navigate(R.id.action_messageFragment_to_encryptFragment)
+            var message: String
+            message = messageEditTextRef.text.toString()
+            val action = MessageFragmentDirections.actionMessageFragmentToEncryptFragment(message)
+            navControllerRef.navigate(action)
         }
 
         return (view)
