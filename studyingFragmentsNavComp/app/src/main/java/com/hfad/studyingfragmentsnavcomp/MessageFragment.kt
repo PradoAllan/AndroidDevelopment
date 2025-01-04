@@ -15,10 +15,16 @@ class MessageFragment: Fragment() {
         val view = inflater.inflate(R.layout.fragment_message, container, false)
         lateinit var navControllerRef : NavController
         val backButton = view.findViewById<Button>(R.id.back)
+        val nextButton = view.findViewById<Button>(R.id.next)
 
         backButton.setOnClickListener {
             navControllerRef = view.findNavController()
             navControllerRef.navigate(R.id.action_messageFragment_to_welcomeFragment)
+        }
+
+        nextButton.setOnClickListener {
+            navControllerRef = view.findNavController()
+            navControllerRef.navigate(R.id.action_messageFragment_to_encryptFragment)
         }
 
         return (view)

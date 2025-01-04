@@ -22,5 +22,13 @@
         <action
             android:id="@+id/action_messageFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_messageFragment_to_encryptFragment"
+            app:destination="@id/encryptFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/encryptFragment"
+        android:name="com.hfad.studyingfragmentsnavcomp.EncryptFragment"
+        android:label="fragment_encrypt"
+        tools:layout="@layout/fragment_encrypt" />
 </navigation>
