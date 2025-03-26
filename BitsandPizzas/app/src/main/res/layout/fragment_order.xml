@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:id="@+id/toolbar"
-                app:layout_collapseMode="pin"/>
+                app:layout_collapseMode="pin" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -39,11 +39,58 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="This is the order fragment!"
-            android:textSize="48sp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20px">
+
+            <TextView
+                android:id="@+id/radio_options_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="Selecione suas opções:" />
+
+            <RadioGroup
+                android:id="@+id/pizza_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_fina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Massa fina" />
+
+                <RadioButton
+                    android:id="@+id/radio_grossa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Massa grossa" />
+
+                <RadioButton
+                    android:id="@+id/radio_aerada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Massa aerada" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/radio_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="24sp"/>
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Queijo extra"
+                style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
+        </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
